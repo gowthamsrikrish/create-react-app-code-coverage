@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: |
           npm install --save-dev react-dev-utils
-          npm run start && npm test -- --coverage --watchAll=false
+          npm test -- --coverage --watchAll=false
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
