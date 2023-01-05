@@ -1,6 +1,6 @@
 name: Sonar-Build
 
-on: [workflow_dispatch,push]
+on: [workflow_dispatch]
 
 jobs:
   build:
@@ -19,8 +19,8 @@ jobs:
           
       - name: Build
         run: |
-          npm run build
           npm install --save-dev react-dev-utils
+          npm run start
           npm test -- --coverage --watchAll=false
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
