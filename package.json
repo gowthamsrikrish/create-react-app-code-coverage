@@ -64,9 +64,6 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "/test/"
-    ],
-    "setupFiles": [
-      "./setupTests.ts"
     ]
   }
 }
