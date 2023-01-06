@@ -22,7 +22,7 @@ jobs:
           npm install --save-dev react-dev-utils
           npm install -g jest
           npm i -D jest-sonar-reporter
-          npm test -- --coverage --watchAll=false
+          npm test -- --coverage --watchAll
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
