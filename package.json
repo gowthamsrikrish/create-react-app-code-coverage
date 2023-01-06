@@ -17,7 +17,7 @@
     "screencast:error": "svg-term --cast jyu19xGl88FQ3poMY8Hbmfw8y --out screencast-error.svg --window --at 12000 --no-cursor",
     "alex": "alex .",
     "test:integration": "jest test/integration",
-    "test": "jest",
+    "test": "cd packages/react-scripts && node bin/react-scripts.js test",
     "eslint": "eslint .",
     "prettier": "prettier .",
     "format": "npm run prettier -- --write"
@@ -47,14 +47,6 @@
     "wait-for-localhost": "^3.3.0",
     "web-vitals": "^2.1.2"
   },
-  "jest": {
-    "testResultsProcessor": "jest-sonar-reporter"
-  },
-  "jestSonar": {
-    "reportPath": "reports",
-    "reportFile": "test-reporter.xml",
-    "indent": 4
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -63,6 +55,18 @@
   "lint-staged": {
     "*.{js,json,yml,yaml,css,scss,ts,tsx,md}": [
       "prettier --write"
+    ]
+  },
+  "jest": {
+    "preset": "react-native",
+    "collectCoverage": true,
+    "testResultsProcessor": "jest-sonar-reporter",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "setupFiles": [
+      "./setupTests.ts"
     ]
   }
 }
